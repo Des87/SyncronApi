@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
 using Microsoft.Identity.Web;
 using MongoDB.Driver;
 using SyncronApi;
@@ -15,9 +14,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddControllers();
 
 //builder.Services.AddDbContext<Localdb>();
-//       options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+//options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection");
 
-//builder.Services.AddDbContext<Localdb>();
+builder.Services.AddDbContext<Localdb>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 //var settings = MongoClientSettings.FromConnectionString("mongodb+srv://admin:<Qwert12345>@jobs.r80kd.mongodb.net/ServiceDinamic?retryWrites=true&w=majority");
 //var client = new MongoClient(settings);

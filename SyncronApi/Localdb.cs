@@ -6,10 +6,13 @@ namespace SyncronApi
 {
     public class Localdb: DbContext
     {
-        public Localdb() : base()
+        public Localdb(DbContextOptions options) : base(options)
         {
+
+
+
         }
-        public DbSet<User> User { get; set; }
+       // public DbSet<User>? User { get; set; }
         //public DbSet<Address> Address { get; set; }
         //public DbSet<Person> Person { get; set; }
         //public DbSet<Companies> Companies { get; set; }
@@ -21,26 +24,5 @@ namespace SyncronApi
         //public DbSet<Workers> Workers { get; set; }
         //public DbSet<WorkPages> WorkPages { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;");
-        //}
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-
-        //    modelBuilder.HasDefaultSchema("Admin");
-
-        //    modelBuilder.Entity<User>().ToTable("User");
-
-        //    modelBuilder.Entity<User>()
-        //        .Property(p => p.Id)
-        //        .IsRequired();
-
-        //    modelBuilder.Entity<User>()
-        //        .Property(p => p.Name)
-        //        .HasMaxLength(50)
-        //        .IsRequired();
-
-
-        //}
+    }
 }
