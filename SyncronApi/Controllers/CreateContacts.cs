@@ -17,9 +17,9 @@ namespace SyncronApi.Controllers
         }
         // PUT api/<CreateContacts>/5
         [HttpPut]
-        public void Put(User user/*, [FromBody] string value*/)
+        public void Put(/*, [FromBody] string value*/)
         {
-            var newcompany = new User(user.Id, user.Name/*, company.Address*/);
+            //var newcompany = new User(user.Id, user.Name/*, company.Address*/);
 
      //       _LocalDb.SaveChanges();
             //TODO ellenőrizni, hogy van e ilyen Id-vel rendelkező Companies

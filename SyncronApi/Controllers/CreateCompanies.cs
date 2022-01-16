@@ -17,19 +17,22 @@ namespace SyncronApi.Controllers
 
         // PUT api/<CreateCompanies>/5
         [HttpPut]
-        public void Put(User user/*, [FromBody] string value*/)
+        public void Put(/*, [FromBody] string value*/)
         {
-                var newcompany = new User(user.Id, user.Name/*, company.Address*/);
+            //    var newcompany = new User(user.Id, user.Name/*, company.Address*/);
 
              //   _LocalDb.User.Add(newcompany);
             //    _LocalDb.SaveChanges();
 
 
-            var t = _LocalDb.User.FirstOrDefault(p => p.Name == user.Name);
-            if (t != null)
-            {
+        //    _LocalDb.User.Add(newcompany);
+         //   _LocalDb.SaveChanges();
 
-            }
+            //var t = _LocalDb.User.Where(p=>p.Name != null).ToList();
+            //if (t != null)
+            //{
+
+            //}
                         //TODO ellenőrizni, hogy van e ilyen Id-vel rendelkező Companies
             //TODO létrehozni az új Companies-t
             //TODO Lementeni adatbázisba
