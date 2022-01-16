@@ -1,16 +1,19 @@
-﻿namespace SyncronApi.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SyncronApi.Model
 {
-    public class Contacts : Person
+    public class Contacts
     {
-        public Contacts(Guid id, string name, Address address, string email, string mobileNumber, Companies companies) : base(id, name, address, email, mobileNumber)
-        {
-            this.Id = id;
-            this.Name = name;
-            this.Address = address;
-            this.Email = email;
-            this.MobileNumber = mobileNumber;
-            this.Companies = companies;
-        }
-        public Companies Companies { get; set; }
+        //public Contacts(Guid id, string name, Address address, string email, string mobileNumber, Companies companies)
+        //{
+     
+        //}
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+
+        [ForeignKey("AddressId")]
+        public Address Address { get; set; }
+        public string Email { get; set; }
+        public string MobileNumber { get; set; }
     }
 }
